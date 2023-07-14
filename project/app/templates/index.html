@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        tr, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Index</title>
+</head>
+<body>  
+    <a href="{% url 'add_student' %}"> adding student </a> <br><br>
+
+    <table>
+        <tr>
+            <th> first name </th>           
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td> {{ student.fname }} </td>            
+        </tr>
+        {% endfor %}
+
+    </table> <br>
+    <a href="{% url 'adding_id' %}"> adding id </a> <br><br>
+    <a href="{% url 'delete' %}"> delete odd numbers  </a>
+</body>
+</html>
